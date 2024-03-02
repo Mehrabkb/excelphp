@@ -10,7 +10,7 @@ if ($_FILES['csv']['error'] == 0 && pathinfo($_FILES['csv']['name'], PATHINFO_EX
                 $obj = htmlspecialchars($_POST['objectiv']);
                 array_push($totalArr , $data[58]);
                 // print_r($data[8]);
-                echo '<br>';
+                // echo '<br>';
             }
             $finalArr = totalArrClear($totalArr , $obj);
             // print_r($finalArr);
@@ -19,7 +19,7 @@ if ($_FILES['csv']['error'] == 0 && pathinfo($_FILES['csv']['name'], PATHINFO_EX
             }
             array_push($fArray , $data);
         }
-        print_r($fArray);
+        // print_r($fArray);
         putDataInCsvFile($fArray);
 
         fclose($handle);
@@ -45,8 +45,8 @@ function putDataInCsvFile($data){
     // Write each row at a time to a file
     foreach ($data as $row) {
         fputcsv($f, $row);
-        echo "<br>";
     }
     // Close the file
     fclose($f);
+    echo '<a href="test.csv">فایل</a>';
 }
